@@ -24,7 +24,7 @@
 		dataType: "json"
 	      }).done(function(d) {
 		      for(let v of d.tree){
-		      $('#d').text($('#d').text + v.path);
+		      $('#d').text($('#d').text() + v.path);
 		      }
 		
 		//....     
