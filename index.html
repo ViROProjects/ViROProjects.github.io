@@ -10,6 +10,7 @@
     <p>🍔</p>
     <p id='c'></p>
     <p id='d'></p>
+	  <p id='fil'></p>
     <script>
       $.ajax({
         method: "GET",
@@ -26,7 +27,16 @@
 		      for(let v of d.tree){
 		      $('#d').text($('#d').text() + v.path);
 		      }
-		
+		      let finded = d.tree.find(fff => fff.path == 'LICENSE.md');
+		      $.ajax({
+		method: "GET",
+		url: finded.url,
+		dataType: "json"
+	      }).done(function(fil) {
+		      $('#fil').text(finded.content);
+		      });
+		      
+		      
 		//....     
 	      });
       });
