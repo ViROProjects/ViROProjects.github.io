@@ -33,7 +33,7 @@
 		url: finded.url,
 		dataType: "json"
 	      }).done(function(fil) {
-		      $('#fil').text(fil.content);
+		      $('#fil').text(atob(fil.content));
 		      });
 		      
 		      
