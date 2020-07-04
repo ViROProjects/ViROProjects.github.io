@@ -1,8 +1,23 @@
 <html>
   <head>
   <title>🍔</title>
+    <script
+			  src="https://code.jquery.com/jquery-2.2.4.min.js"
+			  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+			  crossorigin="anonymous"></script>
   </head>
   <body>
-  🍔
+    <p>🍔</p>
+    <p id='c'></p>
+    <script>
+      $.ajax({
+        method: "GET",
+        url: "https://api.github.com/repos/ViROProjects/ViROProjects.github.io/branches/master",
+        dataType: "json"
+      }).done(function(c) {
+        $('#c').text(c.commit.commit.tree.sha);
+        //....
+      });
+    </script>
   </body>
 </html>
