@@ -3,15 +3,18 @@
     "static": [
         {
             "name": "Main1",
-            "file": "Main1.html"
+            "file": "Main1.html",
+            "folder": ""
         },
         {
             "name": "Main2",
-            "file": "Main2.html"
+            "file": "Main2.html",
+            "folder": ""
         },
         {
             "name": "Main3",
-            "file": "Main3.html"
+            "file": "Main3.html",
+            "folder": ""
         }
     ],
     "sections": [
