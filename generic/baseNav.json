@@ -21,7 +21,8 @@
             "pages": [
                 {
                     "name": "Sitio",
-                    "file": "Sitio.html"
+                    "file": "Sitio.html",
+                    "folder": "projects"
                 }
             ]
         }
