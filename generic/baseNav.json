@@ -1,0 +1,29 @@
+{
+    "baseUrl": "https://viroprojects.github.io/generic/",
+    "static": [
+        {
+            "name": "Main1",
+            "file": "Main1.html"
+        },
+        {
+            "name": "Main2",
+            "file": "Main2.html"
+        },
+        {
+            "name": "Main3",
+            "file": "Main3.html"
+        }
+    ],
+    "sections": [
+        {
+            "name": "projects",
+            "folder": "projects",
+            "pages": [
+                {
+                    "name": "Sitio",
+                    "file": "Sitio.html"
+                }
+            ]
+        }
+    ]
+}
