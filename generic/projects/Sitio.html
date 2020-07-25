@@ -4,5 +4,73 @@
 <p>En el pasado ya había hecho uso de esta tecnología para poder desplegar pequeños demos utilizando motores para crear juegos con JavaScript como Phaser (https://phaser.io/)</p>
 <p>En el año que estoy escribiendo esto (2020)  me vi obligado a aprender aprender Angular e iniciar a investigar sobre nuevas tecnologías de desarrollo front-end debido a que mis conocimientos estaban siendo considerados ya obsoletos al momento en que estoy buscando trabajo. Uno no puede ir simplemente pidiendo un empleo y presentarles en un currículum que lo único que tengo experiencia como desarrollador de front-end es en el uso de HTML, CSS, Javascript y Jquery. La gente y las compañías están esperando que los desarrolladores tengan conocimiento en frameworks mas recientes como es el caso de Angular.</p>
 <p>De alguna manera debo de aprender Angular y a la par demostrar que se utilizarlo. Es por eso que doy inicio a este proyecto de sitio web.</p>
-<h3>Como lo fui construyendo</h3>
-<p>En construcción xD</p>
+<h3>¿Como se hace?</h3>
+
+<p>Antes debo aclarar que no describir paso a paso lo que se debe de hacer pero si comentare las partes que son importantes para lograrlo.</p>
+
+<p>Se debe tener configurado el entorno de trabajo de Angular (https://angular.io/guide/setup-local)</p>
+
+<p>Es necesario tener un repositorio de Github y seguir las recomendaciones para que crear una pagina (https://pages.github.com/ )</p>
+
+<p>Sobre ese repositorio también se debe de agregar un fólder el cual va a contener las paginas que utilizara el sitio y un archivo de configuración que sera consultado utilizando “http.get”</p>
+
+<p>La estructura que estoy utilizando es la siguiente:</p>
+
+<code>
+generic   // fólder base 
+---- projects // folder para almacenar las paginas enlistadas en la sección de “Proyectos”
+-------- Sitio.html //Es esta pagina
+---- Main1.html // pagina utilizada en la pagina principal 
+---- Main2.html // pagina utilizada en la pagina principal 
+---- Main3.html // pagina utilizada en la pagina principal 
+---- baseNav.json // archivo de configuración
+</code>
+
+
+<p>Se debe de crear un proyecto normal en Angular y crear  los siguientes componentes y servicios</p>
+
+<code>
+ng g service file  // Servicio que se utilizara para consultar el archivo de configuración y para obtener el contenido de las paginas.
+ng g component article // componente que representara el contenido de la pagina
+ng g component page // componente que representara la pagina donde se muestra el listado de artículos y el articulo seleccionado
+ng g component dashboard // componente que representa la  pagina principal
+ng g component list // componente que representa el listado de artículos
+ng g component header // componente que representara el encabezado y la navegación del sitio
+</code>
+  
+<p>El archivo de configuración  “baseNav.json” utiliza la estructura en json para obtener información de la estructura de la navegación del sitio y enlistar las paginas que se puede utilizar.</p>
+<code>
+{
+    "baseUrl": "https://viroprojects.github.io/generic/",
+    "static": [
+        {
+            "name": "Main1",
+            "file": "Main1.html",
+            "folder": ""
+        },
+        {
+            "name": "Main2",
+            "file": "Main2.html",
+            "folder": ""
+        },
+        {
+            "name": "Main3",
+            "file": "Main3.html",
+            "folder": ""
+        }
+    ],
+    "sections": [
+        {
+            "name": "Proyectos",
+            "folder": "projects",
+            "pages": [
+                {
+                    "name": "Sitio",
+                    "file": "Sitio.html",
+                    "folder": "projects"
+                }
+            ]
+        }
+    ]
+}
+</code>
