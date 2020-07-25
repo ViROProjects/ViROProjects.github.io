@@ -1,45 +1,13 @@
-<html>
-  <head>
-  <title>🍔</title>
-    <script
-			  src="https://code.jquery.com/jquery-2.2.4.min.js"
-			  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
-			  crossorigin="anonymous"></script>
-  </head>
-  <body>
-    <p>🍔</p>
-    <p id='c'></p>
-    <p id='d'></p>
-	  <p id='fil'></p>
-    <script>
-      $.ajax({
-        method: "GET",
-        url: "https://api.github.com/repos/ViROProjects/ViROProjects.github.io/branches/master",
-        dataType: "json"
-      }).done(function(c) {
-        $('#c').text(c.commit.commit.tree.sha);
-        //....
-	      $.ajax({
-		method: "GET",
-		url: c.commit.commit.tree.url,
-		dataType: "json"
-	      }).done(function(d) {
-		      for(let v of d.tree){
-		      $('#d').text($('#d').text() + v.path);
-		      }
-		      let finded = d.tree.find(fff => fff.path == 'LICENSE.md');
-		      $.ajax({
-		method: "GET",
-		url: finded.url,
-		dataType: "json"
-	      }).done(function(fil) {
-		      $('#fil').text(atob(fil.content));
-		      });
-		      
-		      
-		//....     
-	      });
-      });
-    </script>
-  </body>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>AngularGitMain</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+  <app-root></app-root>
+<script src="runtime-es2015.js" type="module"></script><script src="runtime-es5.js" nomodule defer></script><script src="polyfills-es5.js" nomodule defer></script><script src="polyfills-es2015.js" type="module"></script><script src="styles-es2015.js" type="module"></script><script src="styles-es5.js" nomodule defer></script><script src="vendor-es2015.js" type="module"></script><script src="vendor-es5.js" nomodule defer></script><script src="main-es2015.js" type="module"></script><script src="main-es5.js" nomodule defer></script></body>
 </html>
