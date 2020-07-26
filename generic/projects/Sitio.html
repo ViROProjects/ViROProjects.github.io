@@ -16,7 +16,7 @@
 
 <p>La estructura que estoy utilizando es la siguiente:</p>
 
-<code>
+<pre>
 generic   // fólder base 
 ---- projects // folder para almacenar las paginas enlistadas en la sección de “Proyectos”
 -------- Sitio.html //Es esta pagina
@@ -24,22 +24,22 @@ generic   // fólder base
 ---- Main2.html // pagina utilizada en la pagina principal 
 ---- Main3.html // pagina utilizada en la pagina principal 
 ---- baseNav.json // archivo de configuración
-</code>
+</pre>
 
 
 <p>Se debe de crear un proyecto normal en Angular y crear  los siguientes componentes y servicios</p>
 
-<code>
+<pre>
 ng g service file  // Servicio que se utilizara para consultar el archivo de configuración y para obtener el contenido de las paginas.
 ng g component article // componente que representara el contenido de la pagina
 ng g component page // componente que representara la pagina donde se muestra el listado de artículos y el articulo seleccionado
 ng g component dashboard // componente que representa la  pagina principal
 ng g component list // componente que representa el listado de artículos
 ng g component header // componente que representara el encabezado y la navegación del sitio
-</code>
+</pre>
   
 <p>El archivo de configuración  “baseNav.json” utiliza la estructura en json para obtener información de la estructura de la navegación del sitio y enlistar las paginas que se puede utilizar.</p>
-<code>
+<pre>
 {
     "baseUrl": "https://viroprojects.github.io/generic/",
     "static": [
@@ -73,20 +73,20 @@ ng g component header // componente que representara el encabezado y la navegaci
         }
     ]
 }
-</code>
+</pre>
 
 <p>El servicio “files” consultara el archivo de configuración de la siguiente forma.</p>
 <p>Primero, dentro de una variable se guarda la dirección del archivo de configuración (el formato de la dirección debe de ser utilizando el formato de github pages)</p>
-<code>private baseUrl: any = "https://viroprojects.github.io/generic/baseNav.json";<code/>
+<pre>private baseUrl: any = "https://viroprojects.github.io/generic/baseNav.json";<pre/>
 
 <p>Se crean 3 variables que van a contener los resultados de la búsqueda por http.get al archivo de configuración</p>
-<code>
+<pre>
 public masterInfo: Observable<any>;
 public staticPages: Observable<Array<any>>
 public sections: Observable<any>;
-</code>
+</pre>
 <p>Dentro del constructor se utiliza http.get para asignar la información a las variables</p>
-<code>
+<pre>
 constructor(private http: HttpClient) {
     this.masterInfo = this.http.get<any>(this.baseUrl);
     this.staticPages = this.masterInfo.pipe(map( (res:any) => {
@@ -94,6 +94,6 @@ constructor(private http: HttpClient) {
     }));
     this.sections = this.masterInfo.pipe( map( (res:any) => res.sections));
   }
-</code>
+</pre>
   
   
