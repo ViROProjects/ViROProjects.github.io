@@ -81,16 +81,16 @@ ng g component header // componente que representara el encabezado y la navegaci
 
 <p>Se crean 3 variables que van a contener los resultados de la búsqueda por http.get al archivo de configuración</p>
 <pre>
-public masterInfo: Observable<any>;
-public staticPages: Observable<Array<any>>
-public sections: Observable<any>;
+public masterInfo: Observable&ltany&gt;
+public staticPages: Observable&ltArray&ltany&gt&gt
+public sections: Observable&ltany&gt;
 </pre>
 <p>Dentro del constructor se utiliza http.get para asignar la información a las variables</p>
 <pre>
 constructor(private http: HttpClient) {
     this.masterInfo = this.http.get&gtany&gt(this.baseUrl);
     this.staticPages = this.masterInfo.pipe(map( (res:any) =&gt {
-      return (&ltArray<any&gt&gtres.static);
+      return (&ltArray&ltany&gt&gtres.static);
     }));
     this.sections = this.masterInfo.pipe( map( (res:any) =&gt res.sections));
   }
