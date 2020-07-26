@@ -88,11 +88,11 @@ public sections: Observable<any>;
 <p>Dentro del constructor se utiliza http.get para asignar la información a las variables</p>
 <pre>
 constructor(private http: HttpClient) {
-    this.masterInfo = this.http.get<any>(this.baseUrl);
-    this.staticPages = this.masterInfo.pipe(map( (res:any) => {
-      return (<Array<any>>res.static);
+    this.masterInfo = this.http.get&gtany&gt(this.baseUrl);
+    this.staticPages = this.masterInfo.pipe(map( (res:any) =&gt {
+      return (&ltArray<any&gt&gtres.static);
     }));
-    this.sections = this.masterInfo.pipe( map( (res:any) => res.sections));
+    this.sections = this.masterInfo.pipe( map( (res:any) =&gt res.sections));
   }
 </pre>
   
