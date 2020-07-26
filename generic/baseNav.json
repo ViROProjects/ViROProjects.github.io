@@ -3,17 +3,17 @@
     "static": [
         {
             "name": "Main1",
-            "file": "Main1.html",
+            "file": "Main1",
             "folder": ""
         },
         {
             "name": "Main2",
-            "file": "Main2.html",
+            "file": "Main2",
             "folder": ""
         },
         {
             "name": "Main3",
-            "file": "Main3.html",
+            "file": "Main3",
             "folder": ""
         }
     ],
@@ -24,7 +24,7 @@
             "pages": [
                 {
                     "name": "Sitio",
-                    "file": "Sitio.html",
+                    "file": "Sitio",
                     "folder": "projects"
                 }
             ]
