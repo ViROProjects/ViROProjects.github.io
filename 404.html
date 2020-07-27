@@ -1,5 +1,6 @@
 <script>
     const path = window.location.pathname.slice(1);
-    localStorage.setItem('path', path);
+    const search = window.location.search;
+    localStorage.setItem('path', path+''+search);
     window.location.href='../';
 </script>
