@@ -145,9 +145,45 @@ ng g component header // componente que representara el encabezado y la navegaci
     }
 </pre>
 
-<img src="https://ia601405.us.archive.org/3/items/anotacion-2020-07-30-225431/Anotaci%C3%B3n%202020-07-30%20224337.png">
-<img src="https://ia601405.us.archive.org/3/items/anotacion-2020-07-30-225431/Anotaci%C3%B3n%202020-07-30%20225431.png">
-<img src="https://ia601405.us.archive.org/3/items/anotacion-2020-07-30-225431/Anotaci%C3%B3n%202020-07-30%20231151.png">
+<figure class="internalFigure">
+    <img src="https://ia601405.us.archive.org/3/items/anotacion-2020-07-30-225431/Anotaci%C3%B3n%202020-07-30%20224337.png">
+    <figcaption>app.component</figcaption>
+</figure>
 
+<p>Componente principal. En este se encuentra la etiqueta para las rutas y se encuentra el componente header.component que funcionara como la barra superior de navegación</p>
 
+<figure class="internalFigure">
+    <img src="https://ia601405.us.archive.org/3/items/anotacion-2020-07-30-225431/Anotaci%C3%B3n%202020-07-30%20225431.png">
+    <figcaption>dashboard.component</figcaption>
+</figure>
 
+<p>Este componente servirá como la pagina principal de la aplicación en donde se desplegaran 3 artículos de forma fija utilizando article.component</p>
+
+<figure class="internalFigure">
+    <img src="https://ia601405.us.archive.org/3/items/anotacion-2020-07-30-225431/Anotaci%C3%B3n%202020-07-30%20231151.png">
+    <figcaption>page.component</figcaption>
+</figure>
+
+<p>Este componente servirá como navegación para ver los artículos en las secciones. Los artículos de la sección se desplegaran con list.component y al seleccionar uno de los elementos, se desplegara un article.component </p>
+
+<h3>Routing</h3>
+<p>Uno de los puntos fuertes de angular es que permite que las paginas sean apliciones de una sola pagina y en casos normales, cuando uno utiliza una URL con los parámetros, angular se encarga de manejar esa url y re direccionar dentro de una pagina al lugar donde el desarrollador indique. Lamentablemente esto no se puede hacer de forma nativa si se utiliza github como host pero hay soluciones.</p>
+<p>Cuando se pone una URL equivocada en github pages, te manda a una pagina donde despliega el error 404. Github permite configurar la pagina 404 permitiéndonos agregar nuestra pagina 404.html.</p>
+<p>En esta pagina hay un tutorial que ayuda a realizar la configuración del routing de angular en github</p>
+<p>https://medium.com/swlh/how-to-host-your-angular-reactjs-vuejs-spa-on-github-pages-2d9ab102ac7b</p>
+
+<h3>Notas adicionales</h3>
+
+<h4>Github api</h4>
+
+<p>Durante el desarrollo trate de implementar el uso de github api para poder utilizar la estructura de github como configuración nativa de la aplicación. El problema de esto es que github pone una limitación a el numero de peticiones que se pueden realizar . Son aproximadamente 60 peticiones por hora las que se pueden hacer por IP y debido a que son pocas y a que nuestra aplicación dependería de hacer llamadas http.get la pagina dejaria de funcionar en un tiempo muy corto por exceder ese numero de llamadas.</p>
+<p>En su lugar opte por poner un archivo json como configuración para así simular las llamadas a una api. La desventaja es que tengo que actualizar manualmente.</p>
+
+<h4>Problemas con diseño</h4>
+
+<p>Esto esta fuera del tema de github y angular pero es bueno tenerlo en consideración debido  a que es un  problema que enfrente.</p>
+<p>El diseño de la pagina esta haciendo uso de flex para así poder acomodar los los elementos y secciones de la pagina de una forma que me evita realizar muchos cálculos. El problema es que al momento que quería hacer la pagina compatible con pantallas de pequeños dispositivos  vi problemas cuando quería utilizar la etiqueta “pre” para reprecentar codigo ya que se rompe el diseño. La solución que tuve que realizar es que todos los contenedores de la pagina deberan de tener “min-width: 0;” de forma predefinida ya que por algún motivo esto lo soluciona (aparetemente tiene que ver con una carateristica que metieron en flexbox y min-width: auto)</p>
+
+<h4>librerias externas</h4>
+<p>solamente estoy utilizando fontawesome ya que me facilita el uso de algunos símbolos sin recurrir al uso de emojis </p>
+<p>https://fontawesome.com/</p>
